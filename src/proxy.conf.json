@@ -1,0 +1,9 @@
+{
+  "/io": {
+    "target": "http://192.168.8.105:8/io",
+    "secure": false
+  }, "/io_state_send": {
+    "target": "http://192.168.8.105:8/io_state_send",
+    "secure": false
+  }
+  }

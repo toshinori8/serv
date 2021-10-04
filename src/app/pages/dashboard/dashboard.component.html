@@ -1,0 +1,187 @@
+<!-- Start Section Button List -->
+
+<section id="sha_button_list" class="col-12">
+  <div class="row">
+    <div class="col-12 white_back">
+      <ul>
+        <!-- <li class="switch_ blescan {{isBLE}}">
+              <span class="box">
+                <i class="fa fa-bluetooth" style="transform: scale(1.4)"></i>
+              </span>
+            </li> -->
+        <li
+          class="switch_ mqtt"
+          [ngClass]="statusMqtt ? 'on' : 'off'"
+          (click)="enableMqtt()"
+        >
+          <span class="box">
+            <i class="">
+              <span>mqtt</span>
+            </i>
+          </span>
+        </li>
+        <!-- <li class="switch_ off">
+              <span class="box">
+                <i class="fa fa-wifi"></i>
+              </span>
+            </li> -->
+        <li class="switch_ off" (click)="getDevices()">
+          <span class="box">
+            <i class="fa fa-snowflake-o"></i>
+          </span>
+        </li>
+        <li class="switch_ off">
+          <span class="box">
+            <i class="fa fa-plus"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- End Section Button List -->
+<div class="col-12">
+  <span
+    class="sha_switch pull-right x2 enable_scan"
+    (click)="taggleState(); enableScanBLE()"
+    [ngClass]="statusBLE ? 'on' : 'off'"
+    style="
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      top: -30px;
+    "
+  ></span>
+</div>
+<div class="col-12 scan_board" [ngClass]="statusBLE ? '' : 'hidden'">
+  <ul class="devicesList">
+
+    <li *ngFor="let device of BleDevices" class="dev_{{ device.arp }}">
+      <div class="name_ {{ device.arp }}">
+        <div class="switch {{ device.used }}" (click)="switchDevice(device.arp)">
+          use  
+        </div>
+
+      
+        {{ device.arp }}<br>
+        {{ device.used }}<br>
+        
+
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- Start Section Body 1 -->
+<section id="sha_temp_body" class="col-12">
+  <div class="row top-buffer col_gradient">
+    <!-- NG START  -->
+    <div
+      *ngFor="let device_u of BleDevices"
+      class="device dev_{{ device_u.arp }} {{ device_u.used }}"
+    >
+      <div class="col-5">
+        <span class="sha_temp">
+
+          <div class="battery"> {{ device_u.batt }}
+            
+            
+            <img
+            src="/assets/img/batt/{{device_u.batt_img}}"
+           
+            height="20"
+            width="20" />
+
+
+          </div>
+          <span>
+            <span class="temp-data">
+              {{ device_u.temp_v.temp }}<span class="small_01">.{{ device_u.temp_v.temp_d }}</span> <sup>°C</sup>
+            </span>
+            <hr class="line_" />
+            <span class="hum-data">
+              {{ device_u.hum }}<span class="sup">%</span>
+            </span>
+          </span>
+        </span>
+      </div>
+      <div class="col-7 sha_tile top-buffer height_auto">
+        <div>
+          <div class="col-12">
+            <span class="sha_switch pull-right off x2"></span>
+          </div>
+          <input class="input_" type="text" value="{{ device_u.name }}" />
+          <br /><span>{{ device_u.arp }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NG END  -->
+  </div>
+
+  <div class="clearfix"></div>
+</section>
+
+<!-- End Section Body 1 -->
+<!-- Start Section Body 2 -->
+<section id="sha_temp_meta" class="col-12">
+  <div class="row">
+    <div class="col-12 sha_tile">
+      <div class="row">
+        <div class="col-6">
+          <div>
+            <span class="tile_icon">
+              <i class="fa fa-umbrella"></i>
+            </span>
+            <span class="tile_info">
+              Wilgotność
+              <span>65%</span>
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div>
+            <span class="tile_icon">
+              <i class="fa fa-thermometer-half"></i>
+            </span>
+            <span class="tile_info">
+              Temperatura
+              <span>16 <sup>&deg;C</sup> </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 sha_tile">
+      <div>
+        <span class="tile_icon">
+          <i class="fa fa-wifi"></i>
+        </span>
+        <span class="tile_info">
+          Internet
+          <span>20 mbps</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Section Body 2 -->
+<!-- Start Section Footer -->
+<section id="sha_footer" class="col-12">
+  <div class="row">
+    <div class="col-8">
+      <div>
+        <span class="footer_title"> Current Temperature </span>
+        <span class="footer_data"> 18.5 <span class="unit">&deg;C</span> </span>
+      </div>
+    </div>
+    <div class="col-4">
+      <div>
+        <span class="footer_title text-right"> Turn On/Off </span>
+        <span class="footer_data">
+          <span class="sha_switch pull-right off switchTheme"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Section Footer -->

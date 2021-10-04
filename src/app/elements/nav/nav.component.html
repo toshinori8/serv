@@ -1,0 +1,70 @@
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+    <strong>Album App</strong>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse pull-right" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/setup">Noble</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dashboard">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/secret">Secret Page</a>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-default" (click)="onLogin()">Login</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-default" (click)="onLogout()">Logout</button>
+      </li>     </ul>
+  </div>
+</nav> -->
+
+   <!-- Start Section Button List -->
+   <section id="sha_button_list" class="col-12">
+
+    <div class="row">
+      <div class="col-12 white_back">
+        <ul>
+          <li class="switch_ blescan {{isBLE}}">
+            <span class="box">
+              <i class="fa fa-bluetooth" style="transform: scale(1.4)"></i>
+            </span>
+          </li>
+          <li class="switch_ mqtt {{isMQTTPromise}}">
+            <span class="box">
+              <i class="">
+                <span>mqtt</span>
+              </i>
+            </span>
+          </li>
+          <li class="switch_ off">
+            <span class="box">
+              <i class="fa fa-wifi"></i>
+            </span>
+          </li>
+          <li class="switch_ off">
+            <span class="box">
+              <i class="fa fa-snowflake-o"></i>
+            </span>
+          </li>
+          <li class="switch_ on">
+            <span class="box">
+              <i class="fa fa-plus"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- End Section Button List -->
